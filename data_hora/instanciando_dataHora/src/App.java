@@ -1,6 +1,7 @@
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 
@@ -15,6 +16,7 @@ public class App {
         
         DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        DateTimeFormatter fmt3 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH/mm").withZone(ZoneId.systemDefault());
         
 
         LocalDate d01 = LocalDate.now();
@@ -32,6 +34,9 @@ public class App {
         
         LocalDate d11 = LocalDate.of(2022, 9, 23);
         LocalDateTime d12 = LocalDateTime.of(2022, 9, 2, 01, 23, 12);
+        
+
+
 
         System.out.println(d01.toString());
         System.out.println(d02.toString());
@@ -47,6 +52,12 @@ public class App {
         System.out.println("d012  = " + d12.format(fmt2));
         System.out.println("d12 = " + fmt2.format(d12));
         System.out.println("d12 = " + d12.format(DateTimeFormatter.ofPattern("02/09/2022 01:23:13")));
+
+        System.out.println("==========================================================");
+
+        System.out.println("d13 = " );
+
+        
         
         
     }
